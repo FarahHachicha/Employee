@@ -5,22 +5,15 @@ pipeline {
                stage('Build Back') {
                     
                    steps{
-                     sh './employeemanagerback/mvnw clean compile'
+                     sh 'mvn -f employeemanagerback/pom.xml compile'
                    }
                  
                  }
                   stage ('Unit Test'){
                            agent{
-                                    docker{
-                                             image 'maven:3.6.0-jdk-8-alpine'
-                                             args '-p 80:80' 
-                                             reuseNode true
-                                             
-                                    }
-                           }
                            
                            steps {
-                                    sh './employeemanagerback/mvnw test'
+                                    sh 'mvn -f employeemanagerback test'
                            }
                   }
                   }   
