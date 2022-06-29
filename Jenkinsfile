@@ -10,12 +10,14 @@ pipeline {
                  
                  }
                   stage ('Unit Test'){
-                           agent{
+                         
                            
                            steps {
                                     sh 'mvn -f employeemanagerback test'
                            }
                   }
+                           
+                           
                   }   
                 
               
