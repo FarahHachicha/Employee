@@ -11,7 +11,7 @@ pipeline {
                                   }
                           }
                    steps{
-                     sh 'employeemanagerback/mvnw clean compile'
+                     sh './employeemanagerback/mvnw clean compile'
                    }
                  
                  }
@@ -26,7 +26,7 @@ pipeline {
                            }
                            
                            steps {
-                                    sh 'employeemanagerback/mvnw test'
+                                    sh './employeemanagerback/mvnw test'
                            }
                   }
                   }   
