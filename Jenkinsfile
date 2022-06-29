@@ -10,7 +10,6 @@ pipeline {
                  
                  }
                   stage ('Unit Test'){
-                         
                            
                            steps {
                                     sh 'mvn -f employeemanagerback test'
@@ -19,6 +18,12 @@ pipeline {
                                     always {
                                              junit 'employeemanagerback/target/surefire-reports/TEST-*.xml'
                                     }
+                           }
+                  }
+                  stage ('Integration Test'){
+                           steps {
+                                    sh 'mvn -f employeemanagerback verify -Dsurefire.skip=true'
+
                            }
                   }
                            
