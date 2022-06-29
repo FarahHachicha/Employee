@@ -17,7 +17,7 @@ pipeline {
                            }
                            post {
                                     always {
-                                             junit 'employeemanagerback/target/surefire-report/TEST-*.xml'
+                                             junit '/employeemanagerback/target/surefire-report/TEST-*.xml'
                                     }
                            }
                   }
