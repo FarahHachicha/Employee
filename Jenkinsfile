@@ -15,6 +15,11 @@ pipeline {
                            steps {
                                     sh 'mvn -f employeemanagerback test'
                            }
+                           post {
+                                    always {
+                                             junit 'employeemanagerback/target/surefire-report/TEST-*.xml'
+                                    }
+                           }
                   }
                            
                            
