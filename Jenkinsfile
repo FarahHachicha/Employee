@@ -27,7 +27,7 @@ pipeline {
                            }
                             post {
                                     always {
-                                             junit 'employeemanagerback/target/failsafe-reports/TEST-*.xml'
+                                             junit 'employeemanagerback/target/surefire-reports/TEST-*.xml'
                                     }
                            }
                   }
