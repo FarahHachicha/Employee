@@ -11,7 +11,7 @@ pipeline {
                                   }
                           }
                    steps{
-                     sh 'mvn -f employeemanagerback/pom.xml compile'
+                     sh 'employeemanagerback/mvnw clean compile'
                    }
                  
                  }
@@ -26,7 +26,7 @@ pipeline {
                            }
                            
                            steps {
-                                    sh 'mvn -f employeemanagerback/pom.xml test'
+                                    sh 'employeemanagerback/mvnw test'
                            }
                   }
                   }   
