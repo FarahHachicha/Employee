@@ -29,6 +29,13 @@ pipeline {
                                     always {
                                              junit 'employeemanagerback/target/surefire-reports/TEST-*.xml'
                                     }
+                                     success {
+                                              stash {//sauvegarder les artifacts 
+                                                       (name: 'artifact' , includes: 'employeemanagerback/target/*.jar')
+                                                       archiveArtifacts 'employeemanagerback/target/*.jar'
+                                                       
+                                              }
+                                     }
                            }
                   }
                            
