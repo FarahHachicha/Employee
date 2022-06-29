@@ -25,6 +25,11 @@ pipeline {
                                     sh 'mvn -f employeemanagerback verify -Dsurefire.skip=true'
 
                            }
+                            post {
+                                    always {
+                                             junit 'employeemanagerback/target/failsafe-reports/TEST-*.xml'
+                                    }
+                           }
                   }
                            
                            
